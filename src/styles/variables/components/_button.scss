@@ -1,0 +1,19 @@
+$btn-roundness: 5px;
+
+$btn-base-text-color: getColor("white.base");
+
+$btn-size: (
+  "small": (
+    "font-size": getFontSize("small"),
+    "spacing": getSpacing("1x") getSpacing("2x"),
+    // got padding top & bottom => 1*0.25 = 0.25 and 2*0.25 = 0.5rem
+  ),
+  "regular": (
+    "font-size": getFontSize("body3"),
+    "spacing": getSpacing("2x") getSpacing("4x"),
+  ),
+  "large": (
+    "font-size": getFontSize("body2"),
+    "spacing": getSpacing("3x") getSpacing("8x"),
+  ),
+);

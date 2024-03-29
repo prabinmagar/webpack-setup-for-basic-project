@@ -1,0 +1,35 @@
+//Breakpoints
+$sm-device: 576px;
+$md-device: 768px;
+$lg-device: 992px;
+$xl-device: 1200px;
+
+// BREAKPOINTS
+$breakpoints-up: (
+  "xs": "480px",
+  "sm": "576px",
+  "md": "768px",
+  "lg": "992px",
+  "xl": "1200px",
+  "xxl": "1400px",
+);
+
+$breakpoints-down: (
+  "xs": "479.98px",
+  "sm": "575.98px",
+  "md": "767.98px",
+  "lg": "991.98px",
+  "xl": "1199.98px",
+  "xxl": "1399.98px",
+);
+
+$breakpoints: (
+  "phone": 400px,
+  "phone-wide": 480px,
+  "phablet": 560px,
+  "tablet-small": 640px,
+  "tablet": 768px,
+  "tablet-wide": 1024px,
+  "desktop": 1248px,
+  "desktop-wide": 1440px,
+);

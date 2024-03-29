@@ -1,6 +1,18 @@
-@import "./fonts.scss";
+// ==========================================================================
+// Scalable and Modular Architecture for CSS (SMACSS)
+// With SMACSS, we divide our styles into fives categories: base, libs, modules, states, and utilities
+// ==========================================================================
 
-.login-wrapper {
-  background: url("../assets/images/login-bg.jpg") center/cover no-repeat;
-  min-height: 100vh;
-}
+@import "reseter/index.scss";
+@import "utilities/functions/index";
+@import "utilities/mixins/index";
+@import "variables/index";
+
+/* Sass Compiled Css Code Start */
+@import "app/index";
+@import "components/index";
+@import "utilities/index";
+@import "states/index";
+@import "app/index";
+@import "libs/index";
+@import "shame";

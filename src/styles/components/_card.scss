@@ -1,0 +1,84 @@
+.card {
+  position     : relative;
+  width        : 100%;
+  max-width    : 210px;
+  margin-bottom: getSpacing('7x');
+  box-shadow   : $box-shadow;
+  cursor       : pointer;
+
+  @include e(image) {
+    width   : 100%;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      @include transition();
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+
+      .card__overlay {
+        opacity: 1;
+      }
+    }
+  }
+
+  @include e(info) {
+    background-color: getColor('primary.base');
+    color           : white;
+    padding         : getSpacing('2x') getSpacing('1x');
+  }
+
+  @include e(title) {
+    font-weight  : 500;
+    margin-bottom: getSpacing('2x');
+    @extend %ellipsis;
+
+    a {
+      color: white;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  @include e(sub-title) {
+    font-weight: 300;
+  }
+
+  @include e(overlay) {
+    position        : absolute;
+    width           : 100%;
+    height          : 100%;
+    top             : 0;
+    left            : 0;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    opacity         : 0;
+    @include transition();
+  }
+
+  @include e(overlay-content) {
+    color          : white;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    flex-direction : column;
+    text-align     : center;
+    height         : 100%;
+
+    .btn {
+      color         : white;
+      font-weight   : 400;
+      font-size     : 14px;
+      letter-spacing: 0.5px;
+    }
+
+    svg{
+      color: getColor('primary.light');
+    }
+  }
+}

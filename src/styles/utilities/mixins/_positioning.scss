@@ -1,0 +1,43 @@
+/* ##### POSITIONING ##### */
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $z-index: initial
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $z-index;
+}
+
+@mixin pos-absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin pos-relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin pos-fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+@mixin pos-center($position) {
+  position: absolute;
+  @if $position == "vertical" {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if $position == "horizontal" {
+    left: 50%;
+    transform: translate(-50%);
+  } @else if $position == "both" {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

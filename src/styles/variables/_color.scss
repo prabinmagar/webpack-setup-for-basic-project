@@ -1,0 +1,73 @@
+// Default Color
+$white: #ffffff !default;
+$black: #1F1F1F !default;
+
+// Base colors
+$primary-color: #FF8126 !default;
+$secondary-color: #1F1F1F !default;
+$error-color: #f04745 !default;
+$warning-color: #ffc823 !default;
+$tea-green: #C2E8CE;
+$isabelline: #F7F5F0;
+
+$bg-color: $white;
+
+//Color Palette
+$colorMap: (
+  "white": (
+    "base": $white,
+  ),
+  "black": (
+    "base": $black,
+  ),
+  "primary": (
+    "base": $primary-color,
+    "dark": darken($primary-color, 10%),
+    "light": lighten($primary-color, 10%),
+  ),
+  "secondary": (
+    "base": $secondary-color,
+    "dark": darken($secondary-color, 10%),
+    "light": lighten($secondary-color, 10%),
+  ),
+  "danger": (
+    "base": $error-color,
+    "dark": darken($error-color, 10%),
+    "light": lighten($error-color, 10%),
+  ),
+  "warning": (
+    "base": $warning-color,
+    "dark": darken($warning-color, 10%),
+    "light": lighten($warning-color, 10%),
+  ),
+  "grey": (
+    "5": #f6f6f6,
+    "10": #f2f2f2,
+    "15": #e6e6e6,
+    "20": #d2d2d2,
+    "40": #b3b3b3,
+    "50": #999999,
+    "60": #737373,
+    "70": #515151,
+    "80": #333333,
+  ),
+);
+
+$component-color-variants: (
+  "primary": (
+    "bg-color": getColor("primary.base"),
+    "hover-color": getColor("primary.dark"),
+  ),
+  "secondary": (
+    "bg-color": getColor("secondary.base"),
+    "hover-color": getColor("secondary.dark"),
+  ),
+  "grey": (
+    "bg-color": getColor("grey.50"),
+    "hover-color": getColor("grey.20"),
+    "hover-text-color": getColor("white.base"),
+  ),
+);
+
+$box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.15);
+

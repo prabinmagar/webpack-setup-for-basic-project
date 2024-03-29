@@ -1,0 +1,39 @@
+.search-box {
+  position: relative;
+  width           : 100%;
+  max-width       : 600px;
+  height          : 50px;
+  margin          : 0 auto;
+  display         : -webkit-box;
+  display         : -ms-flexbox;
+  display         : flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack   : center;
+  justify-content : center;
+  box-shadow      : $box-shadow;
+
+  @include e(input) {
+    width  : 75%;
+    padding: getSpacing('4x');
+    padding-left:getSpacing('11x') ;
+    outline: 0;
+    border : 0;
+  }
+
+  @include e(btn) {
+    width        : 25%;
+    border-radius: 0px !important;
+    border-left  : 0px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  @include e(icon) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left:  16px;
+    width: 14px;
+    color: getColor('grey.70');
+  }
+}

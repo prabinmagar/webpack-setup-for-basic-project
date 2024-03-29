@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+  transition: all 300ms ease-in-out;
+  &:focus,
+  &:hover {
+    color: unset;
+  }
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+img {
+  width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  outline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+
+textarea {
+  resize: none;
+}
+
+// Images, Flash & video
+img,
+object,
+embed,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+// iframe
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// bootstrap resets
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.container {
+  padding: 16px 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+.form-control {
+  &:focus {
+    box-shadow: none;
+  }
+}

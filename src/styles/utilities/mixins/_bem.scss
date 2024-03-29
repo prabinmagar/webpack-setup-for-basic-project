@@ -1,0 +1,45 @@
+//BEM(Block Element Modifier) Naming Convention
+// For Element
+// $element  - Just the element name for the parent block (doesn't require the parent Block name)
+// @usage    - `.Nav {@include e(item){...}}`
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+}
+/* Example:
+.navbar {
+  @include e(brand) {
+    margin    : 0;
+    font-size : 36px;
+  }
+}
+
+Result: 
+.navbar__brand {
+  font-size: 36px;
+*/
+
+// For Modifier
+// $modifier  - Just the modifier name for the parent block or element
+// @usage     - `.Nav {@include e(item) {@include m(active) {...}}}`
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+}
+
+/* 
+.navbar{
+  @include e(link){
+    @include m(active){
+      color: $primary-color;
+    }
+  }
+}
+
+Result: 
+.navbar__link--active{
+  color: #2ebacc;
+}
+*/

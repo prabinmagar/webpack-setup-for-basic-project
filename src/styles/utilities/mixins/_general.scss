@@ -1,0 +1,102 @@
+@mixin transition(
+  $property: all,
+  $duration: 0.2s,
+  $timing: $ease--smooth-fade,
+  $delay: ""
+) {
+  transition: $property $duration $timing unquote($delay);
+}
+
+@mixin centralize($direction: "horizontal") {
+  position: absolute;
+  @if $direction == "horizontal" {
+    transform: translateX(-50%);
+    left: 50%;
+  } @else if $direction == "vertical" {
+    transform: translateY(-50%);
+    top: 50%;
+  } @else {
+    @error ('$direction should not be any other than "horizontal" or "vertical"');
+  }
+}
+
+@mixin pulse-animation(
+  $color: getColor("primary.base"),
+  $duration: 1s,
+  $fillmode: forwards
+) {
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba($color, 0.7);
+    }
+
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 15px rgba($color, 0);
+    }
+
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba($color, 0);
+    }
+  }
+
+  animation: pulse $duration $fillmode;
+}
+
+/* ##### TRUNCATE TEXT ON OVERFLOW ##### */
+@mixin truncate-text($truncation-boundary: false, $overflow: ellipsis) {
+  @if $truncation-boundary {
+    max-width: $truncation-boundary;
+  }
+  max-width: $truncation-boundary;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: $overflow; // Text is clipped and the clipped text is represented as ‘…’.
+}
+
+// The user-select property specifies whether the text of an element can be selected. In web browsers, if you double-click on some text it will be selected/highlighted. This property can be used to prevent this.
+@mixin unselectable {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+// The ::selection CSS pseudo-element applies styles to the part of a document that has been highlighted by the user (such as clicking and dragging the mouse across text).
+@mixin selection {
+  ::-moz-selection {
+    @content;
+  }
+  ::selection {
+    @content;
+  }
+}
+
+// Allow the element to be focusable when navigated to via the keyboard
+@mixin vh-focusable {
+  &:active,
+  &:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+  }
+}
+
+// Hardware - Simple and effective for when you need to trigger hardware acceleration for some animation, keeping everything fast, slick and flicker-free.
+@mixin hardware($backface: true, $perspective: 1000) {
+  @if $backface {
+    backface-visibility: hidden;
+  }
+  perspective: $perspective;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

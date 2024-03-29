@@ -1,0 +1,13 @@
+@mixin generate-opacity-classes($prefix, $property, $step: 5){
+    @for $i from 0 through 20{
+        #{$prefix}-#{$i * $step}{
+            @if #{$i * $step } == "100" {
+                #{$property}: 1;
+            } @else {
+                #{$property}: unquote("0." + #{$i * $step});
+            }
+        }
+    }
+}
+
+@include generate-opacity-classes('.opacity', 'opacity');

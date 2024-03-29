@@ -1,0 +1,13 @@
+@each $color, $variants in $colorMap {
+  @if type-of($variants) == map {
+    @each $variant, $value in $variants {
+      .bg-#{$color}-#{$variant} {
+        background-color: $value;
+      }
+    }
+  } @else {
+    .bg-#{$color} {
+      background-color: $variants;
+    }
+  }
+}

@@ -1,55 +1,28 @@
-# OS generated files #
-######################
-.DS_Store
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Logs and databases #
-######################
-*.log
-*.sql
-*.sqlite
-
-# Dependency directories #
-#########################
-/node_modules/
-
-# Build output #
-###############
-/dist/
-/build/
-/out/
-
-# Environment variables #
-########################
 .env
-.env.local
-.env.*.local
 
-# Cache and local files #
-#########################
-.cache/
-.local/
-.yarn/*
-npm-debug.log*
+# Mac OS X
+.DS_Store
+._.*
+._*
 
-# OS or Editor temporary files #
-###############################
+# Ignore local editor
+.project
+.settings
+.idea
 *.swp
-*~
-.#*
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
+tags
+nbproject/*
 
-# Package manager #
-##################
-yarn-error.log
-.pnp.js
+# Windows
+Thumbs.db
 
-# Jest #
-#######
-/coverage/
+# Debugging related
+npm-debug.log
 
-# Webpack #
-##########
-webpack-assets.json
+# Dependency packages files
+node_modules/
+
+# Output
+dist/
